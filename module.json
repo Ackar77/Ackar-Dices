@@ -4,9 +4,14 @@
   "title": "Ackar Dices",
   "description": "Custom Dice So Nice presets with themed textures.",
   "version": "0.1.0",
-  "minimumCoreVersion": "11",
-  "compatibleCoreVersion": "13",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
   "authors": [{ "name": "Ackar77" }],
+  "relationships": {
+  "requires": [
+    { "id": "dice-so-nice", "type": "module" }
+	]
   "dependencies": [
     {
       "name": "dice-so-nice",
