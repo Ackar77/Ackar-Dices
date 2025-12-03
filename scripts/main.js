@@ -11,19 +11,31 @@ Hooks.once("diceSoNiceReady", (dice3d) => {
     "necromancer","noble","nurgle","skulls","tzentch"
   ];
 
-  themes.forEach(t => {
-	// dice types and other
-	Object.entries(diceTypes).forEach(([type, labels]) => {
-	  const DIE = type.toUpperCase(); // "D2", "D4", ...
-      const texId = `ackar-${theme}-${type}`;
-      const colorsetId = `ackar-${theme}-${type}`;
-    // 2) Register a texture (background image for faces)
-    dice3d.addTexture(`ackar-${theme}`, {     
-	  name: `Ackar ${theme}`,	  
+  Object.entries(diceTypes).forEach(([type, labels]) => {
+    const DIE = type.toUpperCase(); // "D2", "D4", ...
+    const texId = `ackar-${type}`;
+    const colorsetId = `ackar-${type}`;
+
+    // 1) Per-die texture
+    dice3d.addTexture(texId, {
+      name: `Ackar ${type}`,
       composite: "source-over",
-      source: `modules/ackar-dices/assets/${theme}/${DIE}.png`,
-	  bump: `modules/ackar-dices/assets/${theme}/${DIE}_bump.png`
+      source: `modules/ackar-dices/assets/${DIE}.png`,
+      bump:   `modules/ackar-dices/assets/${DIE}_bump.png` // remove if not present
     });
+    // 2) Per-die colorset using that texture
+    dice3d.addColorset({
+      name: colorsetId,
+      description: `Ackar ${type}`,
+      category: "Ackar Dices",
+      foreground: "#ffffff",
+      background: "#000000",
+      outline: "black",
+      edge: "#000000",
+      texture: texId,
+      material: "plastic"
+    }, "no");
+
   presets.forEach(p => {
     dice3d.addDicePreset({
       type: p.type,
