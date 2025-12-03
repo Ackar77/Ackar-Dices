@@ -1,0 +1,19 @@
+{
+  "name": "ackar-dices",
+  "title": "Ackar Dices",
+  "description": "Custom Dice So Nice presets: d10 + d100 with themed textures.",
+  "version": "0.1.0",
+  "minimumCoreVersion": "11",
+  "compatibleCoreVersion": "13",
+  "authors": [{ "name": "Ackar77" }],
+  "dependencies": [
+    {
+      "name": "dice-so-nice",
+      "type": "module",
+      "manifest": "https://foundryvtt.com/packages/dice-so-nice",
+      "version": "4.0.0"
+    }
+  ],
+  "esmodules": ["scripts/main.js"],
+  "url": "https://github.com/Ackar77/Ackar-Dices"
+}
