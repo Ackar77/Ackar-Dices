@@ -1,7 +1,8 @@
 {
+  "id": "ackar-dices",
   "name": "ackar-dices",
   "title": "Ackar Dices",
-  "description": "Custom Dice So Nice presets: d10 + d100 with themed textures.",
+  "description": "Custom Dice So Nice presets with themed textures.",
   "version": "0.1.0",
   "minimumCoreVersion": "11",
   "compatibleCoreVersion": "13",
