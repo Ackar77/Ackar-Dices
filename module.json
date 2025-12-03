@@ -7,19 +7,17 @@
   "compatibility": {
     "minimum": "13",
     "verified": "13"
-  "authors": [{ "name": "Ackar77" }],
-  "relationships": {
-  "requires": [
-    { "id": "dice-so-nice", "type": "module" }
-	]
-  "dependencies": [
-    {
-      "name": "dice-so-nice",
-      "type": "module",
-      "manifest": "https://foundryvtt.com/packages/dice-so-nice",
-      "version": "4.0.0"
-    }
+  },
+  "authors": [
+    { "name": "Ackar77" }
   ],
-  "esmodules": ["scripts/main.js"],
+  "relationships": {
+    "requires": [
+      { "id": "dice-so-nice", "type": "module" }
+    ]
+  },
+  "esmodules": [
+    "scripts/main.js"
+  ],
   "url": "https://github.com/Ackar77/Ackar-Dices"
 }
