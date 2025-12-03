@@ -12,17 +12,26 @@ Hooks.once("diceSoNiceReady", (dice3d) => {
   ];
 
   themes.forEach(t => {
-    // 2) Register a texture (background image for faces)
-    dice3d.addTexture(`ackar-${t}`, {
+	// dice types and other
+	Object.entries(diceTypes).forEach(([type, labels]) => {
 	  const DIE = type.toUpperCase(); // "D2", "D4", ...
       const texId = `ackar-${theme}-${type}`;
       const colorsetId = `ackar-${theme}-${type}`;
-     
-	  name: `Ackar ${t}`,	  
+    // 2) Register a texture (background image for faces)
+    dice3d.addTexture(`ackar-${theme}`, {     
+	  name: `Ackar ${theme}`,	  
       composite: "source-over",
       source: `modules/ackar-dices/assets/${theme}/${DIE}.png`,
 	  bump: `modules/ackar-dices/assets/${theme}/${DIE}_bump.png`
     });
+  presets.forEach(p => {
+    dice3d.addDicePreset({
+      type: p.type,
+      system: "ACKAR",
+      labels: p.labels,
+      colorset: "ackar-universal"
+    });
+  });
 
     // 3) Register a colorset that uses that texture
 //    dice3d.addColorset({
